@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-#include "dsu.h"
+#include "src/dsu.h"
 
 using namespace std;
 

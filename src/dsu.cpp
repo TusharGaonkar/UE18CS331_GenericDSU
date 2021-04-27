@@ -2,7 +2,7 @@
 
 template <typename T>
 disjoint_set<T>::disjoint_set() {
-    cout << "Constructor\n";
+    // cout << "Constructor\n";
 }
 
 template <typename T>
@@ -28,20 +28,14 @@ void disjoint_set<T>::unite(T a, T b) {
     link[b] = a;
 }
 
-// Without path compression
+// With path compression
 template <typename T>
 T disjoint_set<T>::find(T a) {
-    while (a != link[a]) a = link[a];
-    return a;
+    if (a == link[a])
+        return a;
+    else
+        return link[a] = find(link[a]);  // we set the direct parent to the root of the set to reduce path length.
 }
-
-// With path compression (TODO: Yet to be tested)
-// T disjoint_set<T>::find_fast(T a) {
-//     if (a == link[a])
-//         return a;
-//     else
-//         return link[a] = find_fast(link[a]);  // we set the direct parent to the root of the set to reduce path length.
-// }
 
 template <typename T>
 bool disjoint_set<T>::same(T a, T b) {
