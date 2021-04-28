@@ -1,0 +1,5 @@
+[x] Write code for MST problem using DSU.
+[] Add more test cases for MST (test1).
+[] Write code for a problem on connected components and add test cases.
+[] Make the DSU work with abstract data types (vectors, objects, etc). Need overloading?
+[] Implement copy constructor and copy assignment operator for the class. 
