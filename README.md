@@ -10,6 +10,12 @@ Open a terminal and enter:
 make -f dsu.mk
 ```
 
+### Test 1
+Ensure you're in the folder `test/test1`
+```
+g++ -std=c++2a test1.cpp && a./out
+```
+
 ### Test 2
 
 ```

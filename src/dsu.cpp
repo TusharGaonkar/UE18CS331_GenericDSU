@@ -1,11 +1,6 @@
 #include "dsu.h"
 
 template <typename T>
-disjoint_set<T>::disjoint_set() {
-    // cout << "Constructor\n";
-}
-
-template <typename T>
 void disjoint_set<T>::insert(T a) {
     if (link.contains(a) || set_size.contains(a)) {
         cout << "[ERROR] : {add_edge()} - Node already exists" << '\n';

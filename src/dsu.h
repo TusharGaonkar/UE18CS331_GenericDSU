@@ -13,7 +13,10 @@ private:
     unordered_map<T, size_t> set_size;
 
 public:
-    explicit disjoint_set();
+    disjoint_set(){};                                              // Default constructor.
+    disjoint_set(disjoint_set<T> const&) = default;                // Copy constructor.
+    disjoint_set<T>& operator=(const disjoint_set<T>&) = default;  // Copy assignment operator.
+
     void insert(T a);
     void unite(T a, T b);
     T find(T a);
@@ -21,7 +24,6 @@ public:
 
     /** Helper Functions for Debugging **/
     void disp_link();
-
     void disp_set_size();
 };
 
