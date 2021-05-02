@@ -48,7 +48,7 @@ T& disjoint_set<T>::operator[](T index) {
         cout << "[ERROR] : {operator[]()} - Index doesn't exist" << endl;
         exit(1);
     }
-    return link[index];
+    return link[find(index)];
 }
 
 /** Helper Functions for Debugging **/

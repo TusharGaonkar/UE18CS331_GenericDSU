@@ -93,13 +93,14 @@ int main() {
     }
 #endif
 
-#if 1
+#if 0
     disjoint_set<int> set;
     set.insert(1);
     set.insert(2);
     set.insert(3);
-    cout << set[2] << endl;
-    cout << set[4];
+    set.unite(1, 2);
+    cout << set[2] << endl; // Prints 1.
+    cout << set[4]; // Fails.
 #endif
 
     return 0;
