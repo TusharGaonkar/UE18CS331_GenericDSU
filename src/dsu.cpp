@@ -39,13 +39,13 @@ bool disjoint_set<T>::same(T a, T b) {
 
 /** Helper Functions for Debugging **/
 template <typename T>
-void disjoint_set<T>::disp_link() {
+void disjoint_set<T>::disp_link() const {
     for (auto& [k, v] : link) cout << k << ": " << v << '\n';
     cout << '\n';
 }
 
 template <typename T>
-void disjoint_set<T>::disp_set_size() {
+void disjoint_set<T>::disp_set_size() const {
     for (auto& [k, v] : set_size) cout << k << ": " << v << '\n';
     cout << '\n';
 }

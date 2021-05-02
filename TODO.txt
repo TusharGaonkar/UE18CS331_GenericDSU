@@ -1,5 +1,15 @@
+Priority 1:
 [x] Write code for MST problem using DSU.
-[] Add more test cases for MST (test1).
+[x] Add more test cases for MST (test1).
+[x] Implement copy constructor and copy assignment operator for the class. 
 [] Write code for a problem on connected components and add test cases.
 [] Make the DSU work with abstract data types (vectors, objects, etc). Need overloading?
-[] Implement copy constructor and copy assignment operator for the class. 
+[] Project Report
+
+Priority 2:
+[] Overload the [] operator to return the representative of the argument. Eg. ds[1]should return the component representative of 1. 
+[] Do the same for operator+ and operator+= to implement insert().
+[] Overload operator== to compare two different disjoint_set objects. 
+[] Look into type_traits and see if it's useful (http://www.cplusplus.com/reference/type_traits/).
+[] Add functionality to the print function to make it display as a tree. 
+[] Find a way to copy from the disjoint_set to a vector of vectors. Eg. Each component in the DSU should get added as a separate vector.
