@@ -93,5 +93,14 @@ int main() {
     }
 #endif
 
+#if 1
+    disjoint_set<int> set;
+    set.insert(1);
+    set.insert(2);
+    set.insert(3);
+    cout << set[2] << endl;
+    cout << set[4];
+#endif
+
     return 0;
 }
