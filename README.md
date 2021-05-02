@@ -11,3 +11,4 @@ Install C++ and make.
 - Main program: `make -f dsu.mk`
 - Test 1: `cd test/test1 && g++ -std=c++2a test1.cpp && ./a.out`
 - Test 2: `cd test/test2 && g++ -std=c++2a test2.cpp && ./a.out`
+- Test 3: `cd test/test3 && g++ -std=c++2a test3.cpp && ./a.out`

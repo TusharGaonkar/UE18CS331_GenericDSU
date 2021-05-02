@@ -48,6 +48,8 @@ public:
     T find(T a);
     bool same(T a, T b);
 
+    T& operator[](T);
+
     /** Helper Functions for Debugging **/
     void disp_link() const;
     void disp_set_size() const;
