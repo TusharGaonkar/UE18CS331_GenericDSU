@@ -1,4 +1,5 @@
 .idea/
-.DS_Store
-*.out
 .vscode/
+.DS_Store
+*.gch
+*.out

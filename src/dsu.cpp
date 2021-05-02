@@ -23,6 +23,11 @@ void disjoint_set<T>::unite(T a, T b) {
     link[b] = a;
 }
 
+template <typename T>
+void disjoint_set<T>::merge(T a, T b) {
+    link[b] = a;
+}
+
 // With path compression
 template <typename T>
 T disjoint_set<T>::find(T a) {

@@ -1,23 +1,13 @@
 # UE18CS311_GenericDSU
+
 A Disjoint Set Union (DSU) data structure library written using C++ templates
 
-## Steps to compile and run
+## Installation
 
-### Main program
+Install C++ and make.
 
-Open a terminal and enter:
-```
-make -f dsu.mk
-```
+## Usage
 
-### Test 1
-Ensure you're in the folder `test/test1`
-```
-g++ -std=c++2a test1.cpp && a./out
-```
-
-### Test 2
-
-```
-g++ -std=c++2a -o test2.out src/dsu.h test/test2/client1.cpp -o test2.out && ./test2.out
-```
+- Main program: `make -f dsu.mk`
+- Test 1: `cd test/test1 && g++ -std=c++2a test1.cpp && ./a.out`
+- Test 2: `cd test/test2 && g++ -std=c++2a test2.cpp && ./a.out`

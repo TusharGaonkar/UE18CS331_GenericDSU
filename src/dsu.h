@@ -44,6 +44,7 @@ public:
 
     void insert(T a);
     void unite(T a, T b);
+    void merge(T a, T b);
     T find(T a);
     bool same(T a, T b);
 
