@@ -75,7 +75,7 @@ int main() {
     }
 #endif
 
-#if 1
+#if 0
     // Use case for derived and user-defined types.
     {
         // disjoint_set<string> ds;
@@ -101,6 +101,61 @@ int main() {
     set.unite(1, 2);
     cout << set[2] << endl; // Prints 1.
     cout << set[4]; // Fails.
+#endif
+
+// Demo operator+=
+#if 0
+    disjoint_set<int> set1;
+    set1.insert(1);
+    set1.insert(2);
+    set1.insert(3);
+    set1.unite(1, 3);
+    disjoint_set<int> set2;
+    set2.insert(3);
+    set2.insert(4);
+    set2.insert(5);
+    set2.unite(3, 5);
+    set1 += set2;
+    cout << "set1:" << endl << set1 << endl << "set2:" << endl << set2 << endl;
+#endif
+
+// Demo operator+
+#if 0
+    disjoint_set<int> set1;
+    set1.insert(1);
+    set1.insert(2);
+    set1.insert(3);
+    set1.unite(1, 3);
+    disjoint_set<int> set2;
+    set2.insert(3);
+    set2.insert(4);
+    set2.insert(5);
+    set2.unite(3, 5);
+    auto set3 = set1 + set2;
+    cout << "set1:" << endl << set1 << endl << "set2:" << endl << set2 << endl << "set3:" << endl << set3 << endl;
+#endif
+
+// Demo == and !=
+#if 0
+    disjoint_set<int> set1;
+    set1.insert(1);
+    set1.insert(2);
+    set1.insert(3);
+    set1.unite(1, 3);
+    disjoint_set<int> set2;
+    set2.insert(1);
+    set2.insert(2);
+    set2.insert(3);
+    set2.unite(1, 3);
+    disjoint_set<int> set3;
+    set3.insert(1);
+    set3.insert(2);
+    set3.insert(3);
+    set3.unite(1, 2);
+    cout << "set1 == set2: " << (set1 == set2 ? "PASS" : "FAIL") << endl;
+    cout << "set1 != set2: " << (set1 != set2 ? "FAIL" : "PASS") << endl;
+    cout << "set1 == set3: " << (set1 == set3 ? "FAIL" : "PASS") << endl;
+    cout << "set1 != set3: " << (set1 != set3 ? "PASS" : "FAIL") << endl;
 #endif
 
     return 0;

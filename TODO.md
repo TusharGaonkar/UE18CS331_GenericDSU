@@ -1,14 +1,17 @@
 - Priority 1:
-    - [x] Write code for MST problem using DSU.
-    - [x] Add more test cases for MST (test1).
+    - [x] Implement test 1 (MST).
+    - [ ] Implement test 2 (connected components).
+    - [x] Implement test 3 (job scheduling).
     - [x] Implement copy constructor and copy assignment operator for the class.
-    - [ ] Write code for a problem on connected components and add test cases.
     - [ ] Make the DSU work with abstract data types (vectors, objects, etc). Need overloading?
     - [ ] Project Report
 - Priority 2:
-    - [x] Overload the array index operator to return the representative of the argument (e.g., `ds[1]` must return the component representative of `1`).
-    - [ ] Do the same for operator+ and operator+= to implement insert().
-    - [ ] Overload operator== to compare two different disjoint_set objects.
+    - Overload the following `operator`s:
+        - [x] `[]` (must return the component representative)
+        - [x] `+`
+        - [x] `+=`
+        - [x] `==`
+        - [x] `!=`
     - [ ] Look into type_traits and see if it's useful (http://www.cplusplus.com/reference/type_traits/).
     - [ ] Add functionality to the print function to make it display as a tree.
     - [ ] Find a way to copy from the disjoint_set to a vector of vectors. Eg. Each component in the DSU should get added as a separate vector.

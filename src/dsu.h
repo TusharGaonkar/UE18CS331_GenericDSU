@@ -34,21 +34,28 @@ public:
 template <typename T>
 class disjoint_set {
 private:
-    unordered_map<T, T> link;
     unordered_map<T, size_t> set_size;
 
 public:
+    /** For internal purpose only. */
+    unordered_map<T, T> link;
+
     disjoint_set(){};                                              // Default constructor.
     disjoint_set(disjoint_set<T> const&) = default;                // Copy constructor.
     disjoint_set<T>& operator=(const disjoint_set<T>&) = default;  // Copy assignment operator.
 
     void insert(T a);
+    void insert(disjoint_set<T> set);
     void unite(T a, T b);
     void merge(T a, T b);
     T find(T a);
     bool same(T a, T b);
 
-    T& operator[](T);
+    T& operator [](T);
+    disjoint_set<T>& operator +=(const disjoint_set<T>& rhs);
+    disjoint_set<T> operator +(const disjoint_set<T>& rhs);
+    bool operator == (const disjoint_set<T>& rhs) const;
+    bool operator != (const disjoint_set<T>& rhs) const;
 
     /** Helper Functions for Debugging **/
     void disp_link() const;
