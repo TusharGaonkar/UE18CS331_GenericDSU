@@ -48,7 +48,7 @@ bool disjoint_set<T>::same(T a, T b) {
 }
 
 template <typename T>
-T& disjoint_set<T>::operator[](T index) {
+T& disjoint_set<T>::operator [](T index) {
     if (!link.contains(index)) {
         cout << "[ERROR] : {operator[]()} - Index doesn't exist" << endl;
         exit(1);
@@ -57,16 +57,26 @@ T& disjoint_set<T>::operator[](T index) {
 }
 
 template <typename T>
-disjoint_set<T>& disjoint_set<T>::operator+=(const disjoint_set<T>& rhs) {
+disjoint_set<T>& disjoint_set<T>::operator +=(const disjoint_set<T>& rhs) {
     insert(rhs);
     return *this;
 }
 
 template <typename T>
-disjoint_set<T> disjoint_set<T>::operator+(const disjoint_set<T>& rhs) {
+disjoint_set<T> disjoint_set<T>::operator +(const disjoint_set<T>& rhs) {
     auto set = *this;
     set.insert(rhs);
     return set;
+}
+
+template <typename T>
+bool disjoint_set<T>::operator == (const disjoint_set<T>& rhs) const {
+    return link == rhs.link;
+}
+
+template <typename T>
+bool disjoint_set<T>::operator != (const disjoint_set<T>& rhs) const {
+    return link != rhs.link;
 }
 
 /** Helper Functions for Debugging **/
