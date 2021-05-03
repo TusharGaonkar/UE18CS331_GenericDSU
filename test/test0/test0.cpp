@@ -1,7 +1,7 @@
-/* Question : Cycle Detection in an Undirected Graph
-https://www.geeksforgeeks.org/detect-cycle-undirected-graph/
+/* Question : 
+https://www.geeksforgeeks.org/detect-cycle-in-a-graph/
 
-Given an undirected graph, check if it contains a cycle. 
+Given a directed graph, check if it contains a cycle. 
 */
 
 #include <fstream>
