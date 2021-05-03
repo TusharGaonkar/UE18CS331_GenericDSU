@@ -3,7 +3,8 @@
 template <typename T>
 void disjoint_set<T>::insert(T a) {
     if (link.contains(a) || set_size.contains(a)) {
-        cout << "[ERROR] : {add_edge()} - Node already exists" << endl;
+        // cout << "[ERROR] : {add_edge()} - Node already exists" << endl;
+        return;
     } else {
         link[a] = a;
         set_size[a] = 1;
