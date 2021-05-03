@@ -58,7 +58,7 @@ T& disjoint_set<T>::operator[](T index) {
         cout << "[ERROR] : {operator[]()} - Index doesn't exist" << endl;
         exit(1);
     }
-    return find(index);
+    return link[find(index)];
 }
 
 template <typename T>
@@ -87,7 +87,7 @@ bool disjoint_set<T>::operator!=(const disjoint_set<T>& rhs) const {
 /** Helper Functions for Debugging **/
 template <typename T>
 void disjoint_set<T>::disp_link() const {
-    for (auto& [k, v] : link) cout << k << ": " << v << '\n';
+    for (auto& [k, v] : link) cout << k << "->" << v << '\n';
     cout << '\n';
 }
 

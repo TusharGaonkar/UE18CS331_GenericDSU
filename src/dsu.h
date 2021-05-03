@@ -29,6 +29,18 @@ public:
     }
 };
 
+template <typename T>
+class hash<set<T>> {
+public:
+    size_t operator()(const set<T>& s) const {
+        size_t seed = s.size();
+        for (auto& i : s) {
+            seed ^= i + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+        }
+        return seed;
+    }
+};
+
 };  // namespace std
 
 template <typename T>
@@ -66,7 +78,7 @@ public:
     friend std::ostream& operator<<(std::ostream& o, const disjoint_set& ds) {
         o << "Links: \n";
         ds.disp_link();
-        o << "Set Size: \n";
+        o << "Set Sizes: \n";
         ds.disp_set_size();
         return o;
     }
