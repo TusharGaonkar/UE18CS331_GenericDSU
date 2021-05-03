@@ -2,7 +2,9 @@
 #define DSU_H
 
 #include <iostream>
+#include <set>
 #include <unordered_map>
+#include <vector>
 
 using namespace std;
 

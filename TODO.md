@@ -3,7 +3,7 @@
     - [x] Implement test 2 (connected components).
     - [x] Implement test 3 (job scheduling).
     - [x] Implement copy constructor and copy assignment operator for the class.
-    - [ ] Make the DSU work with abstract data types (vectors, objects, etc). Need overloading?
+    - [x] Make the DSU work with abstract data types (vectors, objects, etc). Need overloading?
     - [x] Project Report
 - Priority 2:
     - Overload the following `operator`s:
