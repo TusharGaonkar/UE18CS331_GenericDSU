@@ -51,9 +51,11 @@ public:
     T find(T a);
     bool same(T a, T b);
 
-    T& operator[](T);
-    disjoint_set<T>& operator+=(const disjoint_set<T>& rhs);
-    disjoint_set<T> operator+(const disjoint_set<T>& rhs);
+    T& operator [](T);
+    disjoint_set<T>& operator +=(const disjoint_set<T>& rhs);
+    disjoint_set<T> operator +(const disjoint_set<T>& rhs);
+    bool operator == (const disjoint_set<T>& rhs) const;
+    bool operator != (const disjoint_set<T>& rhs) const;
 
     /** Helper Functions for Debugging **/
     void disp_link() const;
