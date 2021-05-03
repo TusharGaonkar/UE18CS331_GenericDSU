@@ -7,7 +7,7 @@
     - [ ] Project Report
 - Priority 2:
     - [x] Overload the array index operator to return the representative of the argument (e.g., `ds[1]` must return the component representative of `1`).
-    - [ ] Do the same for operator+ and operator+= to implement insert().
+    - [x] Do the same for operator+ and operator+= to implement insert().
     - [ ] Overload operator== to compare two different disjoint_set objects.
     - [ ] Look into type_traits and see if it's useful (http://www.cplusplus.com/reference/type_traits/).
     - [ ] Add functionality to the print function to make it display as a tree.

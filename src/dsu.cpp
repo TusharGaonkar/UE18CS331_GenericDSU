@@ -2,11 +2,18 @@
 
 template <typename T>
 void disjoint_set<T>::insert(T a) {
-    if (link.contains(a) || set_size.contains(a)) {
-        cout << "[ERROR] : {add_edge()} - Node already exists" << endl;
-    } else {
+    if (!link.contains(a) && !set_size.contains(a)) {
         link[a] = a;
         set_size[a] = 1;
+    }
+}
+
+template <typename T>
+void disjoint_set<T>::insert(disjoint_set<T> set) {
+    for (auto& [k, v] : set.link) {
+        insert(k);
+        insert(v);
+        unite(k, v);
     }
 }
 
@@ -31,10 +38,8 @@ void disjoint_set<T>::merge(T a, T b) {
 // With path compression
 template <typename T>
 T disjoint_set<T>::find(T a) {
-    if (a == link[a])
-        return a;
-    else
-        return link[a] = find(link[a]);  // we set the direct parent to the root of the set to reduce path length.
+    if (a == link[a]) return a;
+    return link[a] = find(link[a]);  // we set the direct parent to the root of the set to reduce path length.
 }
 
 template <typename T>
@@ -49,6 +54,19 @@ T& disjoint_set<T>::operator[](T index) {
         exit(1);
     }
     return link[find(index)];
+}
+
+template <typename T>
+disjoint_set<T>& disjoint_set<T>::operator+=(const disjoint_set<T>& rhs) {
+    insert(rhs);
+    return *this;
+}
+
+template <typename T>
+disjoint_set<T> disjoint_set<T>::operator+(const disjoint_set<T>& rhs) {
+    auto set = *this;
+    set.insert(rhs);
+    return set;
 }
 
 /** Helper Functions for Debugging **/
