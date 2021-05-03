@@ -50,19 +50,19 @@ public:
     void merge(T a, T b);
     T find(T a);
     bool same(T a, T b);
+    bool exists(T a);
 
-    T& operator [](T);
-    disjoint_set<T>& operator +=(const disjoint_set<T>& rhs);
-    disjoint_set<T> operator +(const disjoint_set<T>& rhs);
-    bool operator == (const disjoint_set<T>& rhs) const;
-    bool operator != (const disjoint_set<T>& rhs) const;
+    T& operator[](T);
+    disjoint_set<T>& operator+=(const disjoint_set<T>& rhs);
+    disjoint_set<T> operator+(const disjoint_set<T>& rhs);
+    bool operator==(const disjoint_set<T>& rhs) const;
+    bool operator!=(const disjoint_set<T>& rhs) const;
 
     /** Helper Functions for Debugging **/
     void disp_link() const;
     void disp_set_size() const;
 
     // Overloading the '<<' operator using a friend function. This is inlined because of method 2 of this SO answer (https://stackoverflow.com/a/4661372/11481456).
-    // TODO: See if this can be made generic too.
     friend std::ostream& operator<<(std::ostream& o, const disjoint_set& ds) {
         o << "Links: \n";
         ds.disp_link();
