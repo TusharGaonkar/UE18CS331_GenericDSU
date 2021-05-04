@@ -11,47 +11,6 @@ private:
     map<int, size_t> set_size;
 
 public:
-    struct Iterator {
-        using iterator_category = bidirectional_iterator_tag;
-        using difference_type = ptrdiff_t;
-        using value_type = map<int, int>;
-        using pointer = value_type*;
-        using reference = value_type&;
-
-        Iterator(pointer ptr) : m_ptr(ptr) {}
-
-        reference operator*() const { return *m_ptr; }
-        pointer operator->() { return m_ptr; }
-
-        Iterator& operator++() {
-            m_ptr++;
-            return *this;
-        }
-
-        Iterator operator++(int) {
-            Iterator tmp = *this;
-            ++(*this);
-            return tmp;
-        }
-
-        Iterator& operator--() {
-            m_ptr--;
-            return *this;
-        }
-
-        Iterator operator--(int) {
-            Iterator tmp = *this;
-            --(*this);
-            return tmp;
-        }
-
-        friend bool operator==(const Iterator& a, const Iterator& b) { return a.m_ptr == b.m_ptr; };
-        friend bool operator!=(const Iterator& a, const Iterator& b) { return a.m_ptr != b.m_ptr; };
-
-    private:
-        pointer m_ptr;
-    };
-
     map<int, int> link;
 
     map<int, int>::iterator begin() {
@@ -72,10 +31,6 @@ public:
     int find(int a);
     bool same(int a, int b);
     bool exists(int a);
-    // pair<T, T> begin();
-    // int begin();
-    // void begin();
-    // int& end();
 
     /** Helper Functions for Debugging **/
     void disp_link() const;
