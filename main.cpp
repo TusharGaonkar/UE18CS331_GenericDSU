@@ -2,6 +2,7 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <map>
 
 #include "src/dsu.h"
 
@@ -40,9 +41,9 @@ int main() {
 
         /*
             one         four
-             \            |   
+             \            |
              three      two
-            
+
         */
 
         cout << ds;
@@ -65,11 +66,11 @@ int main() {
         // Make copies.
         auto copy1 = ds;
         auto copy2 = disjoint_set(ds);
-        
+
         // Modify them.
         copy1.insert("five");
         copy2.insert("six");
-        
+
         // Display all 3.
         ds.disp_link();
         copy1.disp_link();
@@ -114,7 +115,7 @@ int main() {
             cout << "{" << k.first << "," << k.second << "} -> {" << v.first << "," << v.second << "}" << '\n';
         }
 
-        
+
         // Similarly for std::vector and std::set.
         // disjoint_set<vector<string>> ds2;
         // disjoint_set<set<char>> ds2;
@@ -268,6 +269,58 @@ int main() {
     cout << "set1 != set2: " << (set1 != set2 ? "FAIL" : "PASS") << endl;
     cout << "set1 == set3: " << (set1 == set3 ? "FAIL" : "PASS") << endl;
     cout << "set1 != set3: " << (set1 != set3 ? "PASS" : "FAIL") << endl;
+#endif
+
+#if 0
+    // map<int, int> mp;
+    // mp[1] = -1;
+    // mp[2] = -2;
+    // mp[3] = -3;
+    // mp[4] = -4;
+
+    // mp.begin()->first = 5;
+    // cout << mp.begin()->first << '\n';
+
+    disjoint_set<int> ds;
+    ds.insert(1);
+    ds.insert(2);
+    ds.insert(3);
+    ds.insert(4);
+    ds.insert(5);
+    ds.insert(6);
+    ds.insert(7);
+
+    ds.unite(1, 3);
+    ds.unite(1, 5);
+    ds.unite(7, 5);
+    ds.unite(4, 6);
+
+    // Traverse forwards
+    // for (auto d : ds)
+    // std::cout << d.first << "->" << d.second << '\n';
+    for (auto it = ds.begin(); it != ds.end(); ++it) {
+        cout << (*it).first << ' ';
+    }
+    cout << '\n';
+
+    // Traverse backwards
+    for (auto it = --ds.end(); ; --it) {
+        cout << (*it).first << ": ";
+
+        int key = (*it).first;
+        // Find which component this element belongs to.
+        cout << ds.find(key) << '\n';
+        if (it == ds.begin()) break;
+    }
+    cout << '\n';
+
+    // operator=
+    auto ds2 = ds;
+    for (auto d : ds2) cout << d.first << "->" << d.second << '\n';
+
+    disjoint_set<string> set1;
+    set1.insert("hi");
+    cout << set1 << endl;
 #endif
 
     return 0;
