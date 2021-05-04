@@ -138,12 +138,13 @@ int main() {
     cout << '\n';
 
     // Traverse backwards
-    for (auto it = --ds.end(); it != ds.begin(); --it) {
+    for (auto it = --ds.end(); ; --it) {
         cout << (*it).first << ": ";
 
         int key = (*it).first;
         // Find which component this element belongs to.
         cout << ds.find(key) << '\n';
+        if (it == ds.begin()) break;
     }
     cout << '\n';
 
