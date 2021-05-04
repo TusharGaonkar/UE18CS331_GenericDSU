@@ -4,6 +4,7 @@
 #include <iostream>
 #include <set>
 #include <unordered_map>
+#include <map>
 #include <vector>
 
 using namespace std;
@@ -48,11 +49,18 @@ public:
 template <typename T>
 class disjoint_set {
 private:
-    unordered_map<T, size_t> set_size;
+    map<T, size_t> set_size;
 
 public:
     /** For internal purpose only. */
-    unordered_map<T, T> link;
+    map<T, T> link;
+
+    map<T, T>::iterator begin() {
+        return link.begin();
+    }
+    map<T, T>::iterator end() {
+        return link.end();
+    }
 
     disjoint_set(){};                                              // Default constructor.
     disjoint_set(disjoint_set<T> const&) = default;                // Copy constructor.
