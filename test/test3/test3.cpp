@@ -35,7 +35,7 @@ Output: Following is maximum profit sequence of jobs:
 
 using namespace std;
 
-constexpr int TEST_CASES = 2;
+constexpr int TEST_CASES = 3;
 
 int get_max_deadline(vector<tuple<char, int, int>> jobs) {
     auto max_deadline = -1;
