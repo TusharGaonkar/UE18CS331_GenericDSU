@@ -29,7 +29,7 @@ public:
 using namespace std;
 
 int main() {
-#if 0
+#if 1
     // Basic use case for trivial types like std::string
     {
         vector<string> nodes = {"one", "two", "three", "four"};
@@ -271,7 +271,7 @@ int main() {
     cout << "set1 != set3: " << (set1 != set3 ? "PASS" : "FAIL") << endl;
 #endif
 
-#if 1
+#if 0
     // map<int, int> mp;
     // mp[1] = -1;
     // mp[2] = -2;
